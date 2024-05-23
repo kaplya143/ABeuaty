@@ -1,0 +1,271 @@
+body{
+  margin: 0;
+  background: #FFD8E0;
+}
+* {
+	user-select: none;
+	box-sizing: border-box;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  background-color: #FFD8E0;
+}
+
+.header{
+    height: 100%;
+    height: 60px;
+    background: #ad0022;
+}
+.header-hw{
+    height: 100%;
+    height: 70px;
+    border-radius: 0px 0px 25px 25px;
+    background: #F63E62;
+}
+.header h1 {
+    display: flex;
+    width: 20%;
+    height: 60px;
+    margin: 0 auto;
+    margin-left: 40%;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 8.4px;
+}
+.header-hw ul {
+    display: flex;
+    align-content: flex-start;
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    margin-left: 23%;
+    margin-top: 0%;
+    font-size: 24px;
+    justify-content: space-around;
+}
+.header-hw li {
+    margin: 0 auto;
+    margin-top: 2%;
+    list-style-type: none;
+}
+.header-hw a{
+    color: white;
+    font-size: 26px;
+    text-decoration: none;
+}
+.header-hw ul li a:hover {
+    color:black;
+    transition: 0.5s;
+}
+.text-hw {
+    width: 40%;
+    margin-top: 1%;
+    margin-left: 10%;
+    height: 700px;
+}
+.text-hw h1 {
+    color: #000;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Montserrat';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.cards__item{
+    list-style:none;
+}
+.cards {
+    width: 73%;
+    height: fit-content;
+    margin-left: 17%;
+    margin-top: -5px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.cards li {
+   margin-top: 2%;
+}
+
+.cards__item:not(:last-child) {
+  margin-right: 20px;
+}
+.card:hover{
+    filter:brightness(65%);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  background-color: #cb415a;
+}
+.card__image {
+  height: 250px;
+}
+.card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  flex-grow: 1;
+}
+.card__content:hover{
+    background:#ff5473;
+    transition: 0,5s;
+}
+.card__title {
+  margin: 0;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.card__descr {
+  margin: 0;
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+.card__price{
+    color: #fff;
+}
+.card__btn {
+    margin-top: auto;
+    border: none;
+    padding: 10px 117px;
+    color: #fff;
+    background-color: #ff849d;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.card__btn:hover{
+    background: white;
+    transition: 0.5s;
+    color:red;
+}
+.cards__item .card {
+  height: 100%;
+}
+.footer {
+    width: 100%;
+    height: 200px;
+    background: #ad0022;
+    float: inline-end;
+}
+.footer h2 {
+    color: #fff;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    width: 53%;
+    margin-left: 24%;
+    margin-top: 1%;
+    font-family: 'Montserrat';
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+.modal-windows {
+    width: 45%;
+    height: 400px;
+    /* background: #F63E62; */
+    position: fixed;
+    margin-left: 28%;
+    margin-top: 14%;
+    display: none;
+    box-shadow: 2px 2px 10px #ffffff;
+    background-color: #FFD8E0;
+    z-index: 1;
+}
+.submit{
+    margin-top: 2%;
+
+}
+#form{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-windows p{
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+}
+#test {
+    float: right;
+    font-size: 28px;
+    margin-top: -7px;
+    margin-right: 1%;
+    color: black;
+}
+#test:hover{
+    color: red;
+}
+.closes {
+    font-size: 30px;
+    float: right;
+    margin-top: -16%;
+    color: black;
+    margin-right: -1%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.input-feedback{
+    width: 600px;
+    height: 40px;
+}
+.feedback-modal {
+    margin-bottom: 2%;
+}
+.submit input {
+    height: 30px;
+    width: 200px;
+    background: #000000;
+    color: white;
+}
+.submit input:hover{
+    background: white;
+    transition: 0.5s;
+    color:red;
+}
+.btn {
+    width: 15%;
+    height: 50px;
+    margin-left: 43%;
+    margin-top: 0.5%;
+    background: #F63E62;
+    cursor: pointer;
+}
+.btn h1 {
+    color: #fff;
+    text-align: center;
+    margin: 0px auto;
+    font-family: 'Montserrat';
+    font-size: 23px;
+    float: left;
+    margin-top: 4%;
+    margin-left: 23%;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

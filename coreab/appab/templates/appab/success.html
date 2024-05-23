@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './css/success.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/logo.png' %}"/>
+    <title>Запрос</title>
+</head>
+<body>
+    <h2>Ваша запись успешно сохранена!</h2>
+    <a href="{% url 'service' %}">Назад к услугам</a>
+</body>
+</html>

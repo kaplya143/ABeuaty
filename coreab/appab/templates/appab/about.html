@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './css/about.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/logo.png' %}"/>
+    <title>Интернет-магазин косметической продукции</title>
+</head>
+<body>
+<header>
+    <div class="header">
+        <h1>Путь к красоте!</h1>
+    </div>
+    <div class="header-hw">
+        <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'about' %}">Салон</a></li>
+            <li><a href="{% url 'service' %}">Услуги</a></li>
+        </ul>
+        </nav>
+    </div>
+    </header>
+<main>
+    <div class="text-hw">
+        <h1>Наш салон предлагает вам перечень аппаратных косметологических услуг высочайшего класса. Наша главная цель – доставить удовольствие нашим клиентам. Дипломированный персонал поможет вам создать совершенный образ и подчеркнуть естественное очарование.
+Ежедневно салон красоты воплощает в жизнь заветные мечты клиентов! Опытные мастера нашего салона с удовольствием подходят к своему делу. Мы с радостью поможем вам кардинально изменить привычный образ, учтем все пожелания, при необходимости дадим советы и рекомендации. </h1>
+    </div>
+    <div class="photo-hw">
+        <img src="{% static './img/tetya3.png' %}" alt="Салон красоты">
+    </div>
+    <div class="btn" id="btn">
+        <h1>Посмотрите наших спонсоров</h1>
+    </div>
+<div class="marquee" id="marquee">
+        <div class="window-wd" id="modalwd">
+        <span class="close" id="close">&times;</span>
+  <div class="marquee-content">
+    <img src="{% static './img/zolotoe-yabloko-transformed.png' %}" alt="Image 1">
+    <img src="{% static './img/zolotoe-yabloko-transformed.png' %}" alt="Image 1">
+    <img src="{% static './img/zolotoe-yabloko-transformed.png' %}" alt="Image 1">
+      <img src="{% static './img/zolotoe-yabloko-transformed.png' %}" alt="Image 1">
+      <img src="{% static './img/zolotoe-yabloko-transformed.png' %}" alt="Image 1">
+      <img src="{% static './img/zolotoe-yabloko-transformed.png' %}" alt="Image 1">
+  </div>
+</div>
+    </div>
+    <div class="priemishestva">
+          <div class="priemishestva-wh">
+            <img src="{% static './img/tabletka.png' %}" alt="Препараты">
+            <img src="{% static './img/galkaa.png' %}" alt="Качество услуг">
+            <img src="{% static './img/ryka.png' %}" alt="Услуги">
+          </div>
+      <div class="priemishestva-wh-text">
+        <a>ПРЕПАРАТЫ Оригинальные, мирового уровня.</a>
+        <a>КАЧЕСТВО УСЛУГ Найдем подход к кажому из вас.</a>
+        <a>УСЛУГИ Огромный спектр для выбора.</a>
+      </div>
+    </div>
+    </main>
+<footer>
+    <div class="footer">
+        <h1>Более 1.000 клиентов доверились нам и посещяют нас регулярно!</h1>
+    </div>
+    </footer>
+        <script src="{% static 'js/about.js' %}"></script>
+</body>
+</html>

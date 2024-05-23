@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './css/test.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/logo.png' %}"/>
+    <title>Оплата</title>
+</head>
+<body>
+<section class="component" id="component">
+  <div class="credit-card">
+    <h2>Aesthetic Beauty</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <p>{{form.as_p}}</p>
+      <button type="submit" class="valid-button" id="html">Отправить</button>
+    </form>
+    </div>
+</section>
+    <script src="{% static 'js/test.js' %}"></script>
+</body>
+</html>
+

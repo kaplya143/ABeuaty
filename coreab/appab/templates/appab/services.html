@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './css/services.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/logo.png' %}"/>
+    <title>Интернет-магазин косметической продукции</title>
+</head>
+ <div class="modal-windows" id="modalwd">
+        <p class="close" id="test" onclick="unblurBackground()">&times;</p>
+        <form id='form' action="{% url 'home' %}" method="POST">
+            <p>Aesthetic Beauty</p>
+            {% csrf_token %}
+            <div class="feedback-modal">
+            <input type="text" class="input-feedback" name="name" placeholder="Введите ваше имя...">
+                </div>
+            <div class="feedback-modal">
+            <input type="email" class="input-feedback" name="email" placeholder="Действующая почтовый ящик...">
+                </div>
+              <div class="feedback-modal">
+            <input type="text" class="input-feedback" name="number" placeholder="Действующий номер телефона...">
+                </div>
+            <div class="feedback-modal">
+            <input type="text" class="input-feedback" name="year" placeholder="Ваш отзыв...">
+                </div>
+            <div class="submit">
+            <input type="submit" value="Отправить заявку">
+                </div>
+        </form>
+    </div>
+<div id="background">
+<header>
+    <div class="header">
+        <h1>Наши услуги!</h1>
+    </div>
+    <div class="header-hw">
+        <ul>
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'about' %}">Салон</a></li>
+            <li><a href="{% url 'service' %}">Услуги</a></li>
+        </ul>
+    </div>
+    </header>
+<content>
+   <ul class="cards">
+       {%for a in tovar%}
+    <li class="cards__item">
+      <article class="card">
+        <div class="card__image">
+          <img src="{{a.photo.url}}" alt="Услуги">
+        </div>
+        <div class="card__content">
+          <h3 class="card__title">{{a.name}}</h3>
+          <p class="card__descr">{{a.description}}</p>
+            <h2 class="card__price">{{a.price}} <span>Рублей</span></h2>
+            {% if user.is_authenticated %}
+          <button class="card__btn" id="{{a.id}}" onclick="record()">Записаться</button>
+            {% endif %}
+        </div>
+      </article>
+    </li>
+       {%endfor%}
+   </ul>
+     </div>
+</content>
+</div>
+<footer>
+    <div class="footer">
+        <h2>Оставте заявку и администратор нашего салона порекомендует для Вас нужного специалиста.</h2>
+        {% if user.is_authenticated %}
+        <div class="btn" id="modal">
+            <h1 onclick="blurBackground()">Оставить отзыв</h1>
+        </div>
+        {% endif %}
+</footer>
+    <script src="{% static 'js/services.js' %}"></script>
+</body>
+</html>

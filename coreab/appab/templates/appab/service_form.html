@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './css/service_form.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/logo.png' %}"/>
+    <title>Запись</title>
+</head>
+<body>
+<div class="container">
+    <h2>Запись на услугу</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" id="name" name="name"  placeholder="Введите ваше имя..." required>
+        <input type="tel" id="phone" name="phone" placeholder="Введите ваш действующий номера телефона..." required>
+        <input type="email" id="email" name="email" placeholder="Введите ваше действующий почтовый ящик..." required>
+        <input type="text" id="service" name="service" placeholder="Укажите услугу на которую хотите записаться..." required>
+        <input type="date" id="date" name="date" placeholder="Укажите дату..." required>
+        <input type="time" id="time" name="time" placeholder="Укажите время..." required>
+        <button type="submit" onclick="home()">Записаться на услугу!</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+body{
+    background: #FFD8E0;
+    margin: 0 auto;
+}
+* {
+	user-select: none;
+	box-sizing: border-box;
+}
+
+.container {
+    width: 30%;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #edbcc6;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+    margin-top: 2%;
+}
+h2 {
+    display: flex;
+    color: #ff7390;
+    margin-top: 0;
+    font-size: 40px;
+    justify-content: space-evenly;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: -2rem;
+    align-items: center;
+}
+
+button {
+    align-self: center;
+    background-color: #ff7390;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 4rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+button:hover{
+     background: white;
+    transition: 0.5s;
+    color:red;
+}
+
+button:hover {
+    background-color: white;
+}
+input[type=text], input[type=tel], input[type=email], input[type=date], input[type=time] {
+  width: 100%;
+  padding: 12px 3%;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus, input[type=date]:focus, input[type=time]:focus {
+  border-color: #4CAF50;
+}

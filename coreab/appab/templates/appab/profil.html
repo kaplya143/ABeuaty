@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static './css/profil.css' %}">
+    <title>Интернет-магазин косметической продукции</title>
+</head>
+<body>
+<header>
+ <div class="header">
+        <h1>Aesthetic Beauty</h1>
+    </div>
+    <div class="header-hw">
+        <div class="content-section">
+      <div class="media">
+        <div class="media-body">
+          <h2 class="account-heading">Добро пожаловать, {{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+        </div>
+      </div>
+     <a href="{% url 'logout' %}">Выйти</a>
+</div>
+        <ul>
+            <li><a href="{% url 'profil' %}">Главная</a></li>
+            <li><a href="{% url 'about' %}">Салон</a></li>
+            <li><a href="{% url 'service' %}">Услуги</a></li>
+        </ul>
+    </div>
+</header>
+<content>
+    <div class="photo-wd">
+        <img src="{% static './img/tetya1.png' %}" alt="">
+    </div>
+    <div class="text-wd">
+        <h1>Aesthetic Beauty салон аппаратной косметологии экспертного уровня. Здоровое тело и красота кожи - наша задача, которую мы выполняем ежедневно. Находим подход к каждому гостю, окружая комфортом и заботой. Сложно найти своего специалиста, которому можно доверится. Наша команда развивает свои профессиональные навыки, чтобы клиенты смогли чувствовать себя комфортно во время процедур и консультаций.</h1>
+    </div>
+
+    <div class="text-wd-two">
+        <h1>Предлагает широкий спектр процедур, включая инъекции ботокса, филлеры, лазерную эпиляцию, пилинги, микродермабразию и многое другое. Компания также предлагает услуги по уходу за кожей и консультации специалистов.
+Компания активно работает над улучшением качества своих услуг и разработкой новых технологий, чтобы удовлетворить потребности своих клиентов. Aesthetic Beauty также участвует в различных благотворительных проектах и активно сотрудничает с медицинскими учреждениями.</h1>
+    </div>
+    <div class="photo-wd-two">
+        <img src="{% static './img/tetya2.png' %}" alt="">
+    </div>
+
+      <div class="splitview skewed">
+        <div class="panel bottom">
+            <div class="content">
+                <div class="description">
+                    <h1>Услуга: RF-лифтинг</h1>
+                    <p>После нашего слона</p>
+                </div>
+
+                <img src="{% static './img/test1.png' %}" alt="Original">
+            </div>
+        </div>
+
+        <div class="panel top">
+            <div class="content">
+                <div class="description">
+                    <h1>Услуга: RF-лифтинг</h1>
+                    <p>До нашего салона</p>
+                </div>
+
+                <img src="{% static './img/test.png' %}" alt="Duotone">
+            </div>
+        </div>
+
+        <div class="handle"></div>
+    </div>
+    </content>
+<footer>
+    <div class="footer">
+        <h1>Все права защищены © 2024</h1>
+        <div class="footer-animation">
+        <ul>
+              <li><a href="#"><i class="fab fa-facebook-f icon"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter icon"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin-in icon"></i></a></li>
+              <li><a href="#"><i class="fab fa-google-plus-g icon"></i></a></li>
+        </ul>
+    </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/profil.js' %}"></script>
+</body>
+</html>
