@@ -11,14 +11,15 @@ body{
     height: 60px;
     background: #ad0022;
 }
+nav{
+    width: 100%;
+    height: 70px;
+}
 .header-hw{
     height: 100%;
     height: 70px;
     border-radius: 0px 0px 25px 25px;
     background: #F63E62;
-}
-.regvhodprof{
-
 }
 .header-hw img {
     width: 2%;
@@ -68,69 +69,41 @@ body{
     color:black;
     transition: 0.5s;
 }
-.photo-wd {
-    width: 31%;
-    height: 428px;
-    margin-left: 10%;
+.container {
+  max-width: 1200px;
+  margin: 0px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.photo-wd img {
-    height: 420px;
-    margin-left: 20%;
-    margin-top: 1%;
-}
-.text-wd {
-    width: 58%;
-    height: 500px;
-    margin-top: -23%;
-    margin-left: 43%;
-    float: right;
-}
-.text-wd h1 {
-    display: flex;
-    width: 70%;
-    /* height: 435px; */
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: stretch;
-    justify-content: center;
-    text-align: center;
-    letter-spacing: 2.45px;
-    color: #000;
-    font-family: 'Montserrat';
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-.photo-wd-two img {
-    width: 100%;
-}
-.text-wd-two {
-    width: 37%;
-    height: 635px;
-    margin-left: 15%;
-    margin-top: 5%;
-    float: left;
-}
-.photo-wd-two {
-    float: left;
 
+.photo-wd, .photo-wd-two {
+  width: 40%;
+  margin: 20px;
 }
-.text-wd-two h1 {
-    color: #000;
-    margin: 0 auto;
-    text-align: center;
-    font-family: 'Montserrat';
-    font-size: 36px;
-    font-style: normal;
-    letter-spacing: 2.45px;
-    font-weight: 400;
-    line-height: normal;
+
+.photo-wd img, .photo-wd-two img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
-.photo-wd-two img {
-    width: 80%;
-    margin-left: 23%;
-    margin-top: 17%;
+
+.text-wd, .text-wd-two {
+  width: 50%;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.text-wd h1, .text-wd-two h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.text-wd p, .text-wd-two p {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 .footer {
     width: 100%;
