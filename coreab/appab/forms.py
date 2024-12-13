@@ -27,3 +27,9 @@ class ServiceAppointmentForm(forms.ModelForm):
     class Meta:
         model = ServiceAppointment
         fields = ['name', 'phone', 'email', 'service', 'date', 'time']
+
+
+class AvatarForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('avatar',)

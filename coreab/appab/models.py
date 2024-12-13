@@ -76,3 +76,14 @@ class ServiceAppointment(models.Model):
 
     def __str__(self):
         return self.service
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    avatar = models.ImageField(upload_to='avatars', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Профиль'
+        verbose_name_plural = 'Профиль'
+    def __str__(self):
+        return f'{self.user.username} Profile'

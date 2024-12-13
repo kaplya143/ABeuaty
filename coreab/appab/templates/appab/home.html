@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static './css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'img/logo.png' %}"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title>Интернет-магазин косметической продукции</title>
@@ -13,6 +13,25 @@
 <header>
     <div class="header">
         <h1>Aesthetic Beauty</h1>
+
+      <div class="navbar">
+        <div class="container nav-container">
+            <input class="checkbox" type="checkbox" name="" id="" />
+            <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>
+          <div class="menu-items">
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'about' %}">Салон</a></li>
+            <li><a href="{% url 'service' %}">Услуги</a></li>
+            <li><a href="{% url 'register' %}">Регистрация</a></li>
+            <li><a href="{% url 'vhod' %}">Войти</a></li>
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="header-hw">
         <div class="regvhodprof">
@@ -35,7 +54,7 @@
         <img src="{% static './img/tetya1.png' %}" alt="">
     </div>
     <div class="text-wd">
-        <h1>Aesthetic Beauty - это не просто салон аппаратной косметологии, это место, где высокий уровень экспертизы сочетается с индивидуальным подходом к каждому клиенту. Каждый день наша цель - помочь достичь здоровья тела и красоты кожи. Мы понимаем, что найти идеального специалиста, которому можно доверить свою красоту, бывает сложно. Поэтому наша команда постоянно совершенствует свои профессиональные навыки, чтобы обеспечить клиентам максимальный комфорт во время процедур и консультаций. Мы стремимся к тому, чтобы каждый гость салона Aesthetic Beauty чувствовал себя окруженным заботой и вниманием, получая не только результат, но и приятные впечатления от посещения.</h1>
+        <h1>Aesthetic Beauty - это не просто салон аппаратной косметологии, это место, где высокий уровень экспертизы сочетается с индивидуальным подходом к каждому клиенту. Каждый день наша цель - помочь достичь здоровья тела и красоты кожи. Мы понимаем, что найти идеального специалиста, которому можно доверить свою красоту, бывает сложно. Поэтому наша команда постоянно совершенствует свои профессиональные навыки, чтобы обеспечить клиентам максимальный комфорт во время процедур и консультаций. Мы стремимся к тому, чтобы каждый гость. Салона Aesthetic Beauty чувствовал себя окруженным заботой и вниманием, получая не только результат, но и приятные впечатления от посещения.</h1>
     </div>
 
     <div class="text-wd-two">
@@ -80,10 +99,10 @@
         <p>Все права защищены © 2024</p>
         <div class="footer-animation">
         <ul>
-              <li><a href="#"><i class="fab fa-facebook-f icon"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter icon"></i></a></li>
-              <li><a href="#"><i class="fab fa-linkedin-in icon"></i></a></li>
-              <li><a href="#"><i class="fab fa-google-plus-g icon"></i></a></li>
+              <li><a href="{% url 'qr' %}"><i class="fab fa-facebook-f icon"></i></a></li>
+              <li><a href="{% url 'qr' %}"><i class="fab fa-twitter icon"></i></a></li>
+              <li><a href="{% url 'eco' %}"><i class="fab fa-linkedin-in icon"></i></a></li>
+              <li><a href="{% url 'eco' %}"><i class="fab fa-google-plus-g icon"></i></a></li>
         </ul>
     </div>
         </div>

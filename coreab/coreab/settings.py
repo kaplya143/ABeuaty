@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'AestheticBeauty',
         'USER': 'postgres',
         'PASSWORD': '123',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
@@ -136,7 +136,7 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'profil'
 LOGIN_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 

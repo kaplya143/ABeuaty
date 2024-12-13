@@ -53,3 +53,15 @@ margin-top: 20px;
     transition: 0.5s;
     color:red;
 }
+@media (max-width: 844px) and (min-width: 390px){
+form {
+    position: relative;
+    width: 90%;
+    height: 388px;
+    margin: 5rem auto;
+    padding: 1rem;
+    box-shadow: 2px 2px 20px #ffffff;
+    background-color: #FFD8E0;
+    text-align: center;
+}
+}

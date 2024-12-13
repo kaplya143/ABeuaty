@@ -34,7 +34,24 @@
 <header>
     <div class="header">
         <h1>Наши услуги!</h1>
-    </div>
+              <div class="navbar">
+        <div class="container nav-container">
+            <input class="checkbox" type="checkbox" name="" id="" />
+            <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>
+          <div class="menu-items">
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'about' %}">Салон</a></li>
+            <li><a href="{% url 'service' %}">Услуги</a></li>
+            <li><a href="{% url 'register' %}">Регистрация</a></li>
+            <li><a href="{% url 'vhod' %}">Войти</a></li>
+          </div>
+        </div>
+      </div>
+
     <div class="header-hw">
         <ul>
             <li><a href="{% url 'home' %}">Главная</a></li>

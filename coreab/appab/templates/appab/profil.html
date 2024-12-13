@@ -13,14 +13,14 @@
     </div>
     <div class="header-hw">
         <div class="content-section">
-      <div class="media">
-        <div class="media-body">
-          <h2 class="account-heading">Добро пожаловать, {{ user.username }}</h2>
-          <p class="text-secondary">{{ user.email }}</p>
+            <div class="media">
+                <div class="media-body">
+                    <h2 class="account-heading">{{ user.username }} {{ user.last_name }}</h2>
+                    <p class="text-secondary">{{ user.email }}</p>
+                    <p class="text-secondary">Дата регистрации: {{ user.date_joined|date:"d.m.Y" }}</p>
+                </div>
+            </div>
         </div>
-      </div>
-     <a href="{% url 'logout' %}">Выйти</a>
-</div>
         <ul>
             <li><a href="{% url 'profil' %}">Главная</a></li>
             <li><a href="{% url 'about' %}">Салон</a></li>
@@ -29,65 +29,32 @@
     </div>
 </header>
 <content>
-<div class="container">
-    <div class="photo-wd">
-        <img src="{% static './img/tetya1.png' %}" alt="">
+    <div class="profile-container">
+<div class="profile-header">
+    <div class="profile-avatar">
+        {% if user.profile.avatar %}
+            <img src="{{ user.profile.avatar.url }}" alt="Аватар">
+        {% else %}
+            <img src="{% static 'img/default_avatar.png' %}" alt="Аватар">
+        {% endif %}
     </div>
-    <div class="text-wd">
-        <h1>Aesthetic Beauty - это не просто салон аппаратной косметологии, это место, где высокий уровень экспертизы сочетается с индивидуальным подходом к каждому клиенту. Каждый день наша цель - помочь достичь здоровья тела и красоты кожи. Мы понимаем, что найти идеального специалиста, которому можно доверить свою красоту, бывает сложно. Поэтому наша команда постоянно совершенствует свои профессиональные навыки, чтобы обеспечить клиентам максимальный комфорт во время процедур и консультаций. Мы стремимся к тому, чтобы каждый гость салона Aesthetic Beauty чувствовал себя окруженным заботой и вниманием, получая не только результат, но и приятные впечатления от посещения.</h1>
+    <div class="profile-info">
+        <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+        <p>{{ user.email }}</p>
+        <p>Дата регистрации: {{ user.date_joined|date:"d.m.Y" }}</p>
+        <a href="{% url 'logout' %}">Выйти</a>
     </div>
-
-    <div class="text-wd-two">
-        <h1>Aesthetic Beauty - это косметологическая компания, предоставляющая широкий спектр процедур для улучшения внешности и состояния кожи. Среди услуг, которые они предлагают, можно выделить инъекции ботокса, филлеры, лазерную эпиляцию, различные виды пилингов, микродермабразию и многое другое. Кроме того, компания оказывает услуги по уходу за кожей и проводит консультации специалистов, помогая клиентам подобрать оптимальные процедуры для достижения желаемых результатов.
-
-Одним из ключевых принципов Aesthetic Beauty является постоянное стремление к улучшению качества предоставляемых услуг. Компания активно внедряет новейшие технологии и методики, чтобы удовлетворить потребности своих клиентов и обеспечить наивысший уровень сервиса. Благодаря постоянному развитию и инновациям, Aesthetic Beauty заслужила репутацию надежного провайдера профессиональных косметологических услуг.
-
-Кроме заботы о красоте клиентов, Aesthetic Beauty также активно участвует в различных благотворительных проектах, демонстрируя социальную ответственность и внимание к обществу. Компания также поддерживает сотрудничество с медицинскими учреждениями, обмениваясь опытом и знаниями с профессионалами смежных отраслей для достижения лучших результатов в области косметологии и дерматологии.</h1>
-    </div>
-    <div class="photo-wd-two">
-        <img src="{% static './img/tetya2.png' %}" alt="">
-    </div>
+    <form method="post" class="imgform" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="imgbut">Обновить</button>
+    </form>
+    {% if request.user.is_superuser %}
+    <a href="{% url 'userzapis' %}">Посмотреть запись</a>
+    {% endif %}
 </div>
-
-      <div class="splitview skewed">
-        <div class="panel bottom">
-            <div class="content">
-                <div class="description">
-                    <h1>Услуга: RF-лифтинг</h1>
-                    <p>После нашего слона</p>
-                </div>
-
-                <img src="{% static './img/test1.png' %}" alt="Original">
-            </div>
-        </div>
-
-        <div class="panel top">
-            <div class="content">
-                <div class="description">
-                    <h1>Услуга: RF-лифтинг</h1>
-                    <p>До нашего салона</p>
-                </div>
-
-                <img src="{% static './img/test.png' %}" alt="Duotone">
-            </div>
-        </div>
-
-        <div class="handle"></div>
     </div>
-    </content>
-<footer>
-    <div class="footer">
-        <h1>Все права защищены © 2024</h1>
-        <div class="footer-animation">
-        <ul>
-              <li><a href="#"><i class="fab fa-facebook-f icon"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter icon"></i></a></li>
-              <li><a href="#"><i class="fab fa-linkedin-in icon"></i></a></li>
-              <li><a href="#"><i class="fab fa-google-plus-g icon"></i></a></li>
-        </ul>
-    </div>
-        </div>
-    </footer>
+</content>
     <script src="{% static 'js/profil.js' %}"></script>
 </body>
 </html>

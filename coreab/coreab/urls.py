@@ -33,6 +33,9 @@ urlpatterns = [
     path('vhod/', LoginUser.as_view(), name='vhod'),
     path('service-appointment/', service_appointment, name='service_appointment'),
     path('success/', lambda request: render(request, 'appab/success.html'), name='success'),
+    path('eco/', eco, name='eco'),
+    path('qr/', qr, name='qr'),
+    path('userzapis/', userzapis, name='userzapis'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

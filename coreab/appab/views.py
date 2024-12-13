@@ -1,7 +1,6 @@
 # Create your views here.
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import LoginView
 from django.shortcuts import render
 from .forms import *
 from django.shortcuts import redirect
@@ -24,6 +23,14 @@ def home(request):
 
 def about(request):
     return render(request, "appab/about.html")
+
+
+def eco(request):
+    return render(request, "appab/eco.html")
+
+
+def qr(request):
+    return render(request, "appab/qr.html")
 
 
 def services(request):
@@ -74,7 +81,23 @@ def logout_view(request):
 
 @login_required
 def profil(request):
-    return render(request, 'appab/profil.html', {'user': request.user})
+    try:
+        profile = request.user.profile
+    except Profile.DoesNotExist:
+        profile = None
+    if request.method == 'POST':
+        form = AvatarForm(request.POST, request.FILES)
+        if form.is_valid():
+            if profile:
+                profile.avatar = form.cleaned_data['avatar']
+                profile.save()
+            else:
+                new_profile = Profile(user=request.user, avatar=form.cleaned_data['avatar'])
+                new_profile.save()
+            return redirect('profil')
+    else:
+        form = AvatarForm()
+    return render(request, 'appab/profil.html', {'user': request.user, 'form': form})
 
 
 def service_appointment(request):
@@ -87,3 +110,11 @@ def service_appointment(request):
         form = ServiceAppointmentForm()
 
     return render(request, 'appab/service_form.html', {'form': form})
+
+
+def userzapis(request):
+    zapis = ServiceAppointment.objects.all()
+    data = {
+        'zapis':zapis,
+    }
+    return render(request, "appab/userzapis.html", data)
